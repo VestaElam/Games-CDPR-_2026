@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-  </head>
-  <body>
-    <main class="container">
-      <h1><%= message %></h1>
-      <h2><%= status %></h2>
-      <a href="/">На главную</a>
-      <% if (error.stack) { %><pre><%= error.stack %></pre><% } %>
-    </main>
-  </body>
-</html>
+<!doctype html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a0c10"><meta name="description" content="Игры CD PROJEKT RED: Ведьмак, Cyberpunk 2077, ГВИНТ и Кровная вражда. Две вселенные, истории и галерея."><title><%= title %></title><link rel="stylesheet" href="/stylesheets/templatemo-electric-xtra.css"><link rel="stylesheet" href="/stylesheets/cdpr.css"></head>
+<body><a class="skip-link" href="/#games">Перейти к играм</a><div class="grid-bg" aria-hidden="true"></div><div class="scanlines" aria-hidden="true"></div><div id="particles" aria-hidden="true"></div>
+<nav id="navbar" aria-label="Главное меню"><div class="nav-container"><a href="/#home" class="logo-link" aria-label="CD PROJEKT RED - к началу"><img src="/images/cdpr-logo.svg" width="150" height="63" alt="CD PROJEKT RED"><span class="fan-label">МИРЫ И ИСТОРИИ<br><small>ФАНАТСКИЙ ПРОЕКТ</small></span></a><ul class="nav-links" id="navLinks"><li><a class="nav-link" href="/#worlds">Вселенные</a></li><li><a class="nav-link" href="/#games">Игры</a></li><li><a class="nav-link" href="/#gallery">Галерея</a></li><li><a class="nav-link" href="/#about">О студии</a></li></ul><a class="nav-explore" href="/#games">Выбрать историю <span>↗</span></a><button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Открыть меню"><span></span><span></span><span></span></button></div></nav><main class="section error-page">
+  <p class="eyebrow">ОШИБКА <%= status %></p>
+  <h1><%= message %></h1>
+  <a class="detail-back" href="/">← На главную</a>
+  <% if (error.stack) { %><pre><%= error.stack %></pre><% } %>
+</main><footer class="site-footer"><div><img src="/images/cdpr-logo.svg" width="125" height="52" alt="CD PROJEKT RED"><p>Миры, в которые хочется вернуться.</p></div><div><p>Учебный фанатский проект · 2026</p><p>Игры и изображения © CD PROJEKT RED и их правообладатели.</p><p>Дизайн на основе <a href="https://templatemo.com/tm-596-electric-xtra" target="_blank" rel="noopener">Electric Xtra / TemplateMo ↗</a></p></div><a class="back-top" href="/#home" aria-label="Вернуться к началу">↑</a></footer><script src="/javascripts/games.js"></script><script src="/javascripts/cdpr.js"></script></body></html>
