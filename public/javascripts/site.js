@@ -35,7 +35,7 @@ https://templatemo.com/tm-596-electric-xtra
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
-        menuToggle.addEventListener('click', () => {
+        menuToggle?.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
@@ -43,8 +43,8 @@ https://templatemo.com/tm-596-electric-xtra
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+                menuToggle?.classList.remove('active');
+                navLinks?.classList.remove('active');
             });
         });
 
@@ -70,11 +70,7 @@ https://templatemo.com/tm-596-electric-xtra
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            navbar?.classList.toggle('scrolled', window.scrollY > 50);
             updateActiveNav();
         });
 
@@ -114,10 +110,10 @@ https://templatemo.com/tm-596-electric-xtra
         });
 
         // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
             // Add your form submission logic here
-            alert('Message sent! We\'ll get back to you soon.');
+            alert('Демонстрационная форма: сообщение не отправляется.');
             this.reset();
         });
 
@@ -189,13 +185,15 @@ https://templatemo.com/tm-596-electric-xtra
         }
 
         // Initialize first text set
-        textSets[0].classList.add('active');
-        animateTextIn(textSets[0]);
+        if (textSets.length) {
+          textSets[0].classList.add('active');
+          animateTextIn(textSets[0]);
 
         // Start rotation after initial display
         setTimeout(() => {
             setInterval(rotateText, 5000); // Change every 5 seconds
-        }, 4000);
+          }, 4000);
+        }
 
         // Add random glitch effect
         setInterval(() => {
