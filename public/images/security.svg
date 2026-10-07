@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Military-Grade Security</title>
+  <desc id="desc">Синий щит с замком и оранжевым контуром цифровой сети</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111823"/><stop offset="1" stop-color="#07080c"/></linearGradient>
+    <linearGradient id="shield" x2="1" y2="1"><stop stop-color="#00b2ff"/><stop offset="1" stop-color="#0081bd"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#00b2ff" stroke-opacity=".14"/></pattern>
+  </defs>
+  <rect width="960" height="540" rx="20" fill="url(#bg)"/><rect width="960" height="540" rx="20" fill="url(#grid)"/>
+  <path d="M480 62L655 126V226C655 310 578 374 480 410C382 374 305 310 305 226V126Z" fill="none" stroke="#ff5e00" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M480 92L618 145V221C618 291 554 343 480 374C406 343 342 291 342 221V145Z" fill="url(#shield)" fill-opacity=".25" stroke="#00b2ff" stroke-width="3"/>
+  <path d="M441 224V190A39 39 0 0 1 519 190V224" fill="none" stroke="#fff" stroke-width="12"/>
+  <rect x="423" y="224" width="114" height="84" rx="10" fill="#ff5e00"/>
+  <circle cx="480" cy="260" r="9" fill="#111823"/><path d="M480 269V284" stroke="#111823" stroke-width="7"/>
+  <text x="480" y="466" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" letter-spacing="5">SECURITY</text>
+</svg>

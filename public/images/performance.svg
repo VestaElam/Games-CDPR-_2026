@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Lightning Fast Performance</title>
+  <desc id="desc">Оранжевая молния на фоне синей цифровой сетки</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111823"/><stop offset="1" stop-color="#07080c"/></linearGradient>
+    <linearGradient id="bolt" x2="1" y2="1"><stop stop-color="#ffbd6e"/><stop offset="1" stop-color="#ff5e00"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#00b2ff" stroke-opacity=".14"/></pattern>
+  </defs>
+  <rect width="960" height="540" rx="20" fill="url(#bg)"/><rect width="960" height="540" rx="20" fill="url(#grid)"/>
+  <g fill="none" stroke="#00b2ff"><circle cx="480" cy="235" r="166" stroke-opacity=".25"/><circle cx="480" cy="235" r="128" stroke-dasharray="12 16" stroke-width="2" stroke-opacity=".55"/></g>
+  <path d="M518 79L386 261H474L442 393L581 198H494Z" fill="url(#bolt)"/>
+  <text x="480" y="466" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" letter-spacing="5">PERFORMANCE</text>
+</svg>
