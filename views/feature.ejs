@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %> — ELECTRIC XTRA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="gradient-overlay" aria-hidden="true"></div>
+  <main class="detail-page">
+    <a class="detail-back" href="/">← ELECTRIC XTRA</a>
+    <h1 class="section-title"><%= title %></h1>
+    <img class="detail-picture" src="<%= picture %>" alt="<%= title %>">
+    <p class="detail-description"><%= desc %></p>
+    <div class="detail-links">
+      <a href="/performance">Performance</a>
+      <a href="/security">Security</a>
+      <a href="/network">Network</a>
+    </div>
+    <p class="copyright">Design: <a href="https://templatemo.com">TemplateMo</a></p>
+  </main>
+</body>
+</html>
