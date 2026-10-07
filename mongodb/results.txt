@@ -1,0 +1,624 @@
+{
+  demoDatabase: 'learn_creation_demo_2026',
+  collections: [
+    'unicorns'
+  ],
+  count: 1
+}
+{
+  ok: 1,
+  dropped: 'learn_creation_demo_2026'
+}
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6ac6b02712ec5eaab858d0ef'),
+    '1': ObjectId('6ac6b02712ec5eaab858d0f0'),
+    '2': ObjectId('6ac6b02712ec5eaab858d0f1'),
+    '3': ObjectId('6ac6b02712ec5eaab858d0f2'),
+    '4': ObjectId('6ac6b02712ec5eaab858d0f3'),
+    '5': ObjectId('6ac6b02712ec5eaab858d0f4'),
+    '6': ObjectId('6ac6b02712ec5eaab858d0f5'),
+    '7': ObjectId('6ac6b02712ec5eaab858d0f6'),
+    '8': ObjectId('6ac6b02712ec5eaab858d0f7'),
+    '9': ObjectId('6ac6b02712ec5eaab858d0f8'),
+    '10': ObjectId('6ac6b02712ec5eaab858d0f9'),
+    '11': ObjectId('6ac6b02712ec5eaab858d0fa')
+  }
+}
+{
+  database: 'learn',
+  collections: [
+    'unicorns'
+  ],
+  count: 12
+}
+Задание 1
+[
+  {
+    name: 'Unicrom'
+  },
+  {
+    name: 'Dunx'
+  }
+]
+Задание 2
+[
+  {
+    name: 'Ayna'
+  }
+]
+Задание 3
+[
+  {
+    name: 'Nimue'
+  }
+]
+Задание 4
+[
+  {
+    name: 'Aurora'
+  }
+]
+Задание 5
+11
+Задание 6
+[
+  {
+    name: 'Unicrom'
+  },
+  {
+    name: 'Pilot'
+  },
+  {
+    name: 'Dunx'
+  }
+]
+Задание 7
+8
+Задание 8
+4
+Задание 9
+[
+  {
+    name: 'Horny'
+  },
+  {
+    name: 'Aurora'
+  },
+  {
+    name: 'Solnara'
+  },
+  {
+    name: 'Kenny'
+  },
+  {
+    name: 'Nimue'
+  },
+  {
+    name: 'Dunx'
+  }
+]
+Задание 10
+[
+  {
+    name: 'Horny'
+  },
+  {
+    name: 'Unicrom'
+  },
+  {
+    name: 'Roodles'
+  },
+  {
+    name: 'Solnara'
+  },
+  {
+    name: 'Raleigh'
+  },
+  {
+    name: 'Leia'
+  },
+  {
+    name: 'Pilot'
+  },
+  {
+    name: 'Dunx'
+  }
+]
+11. Roodles похудел на 10
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+12. Pilot убил ещё 2 вампиров
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+13. Aurora полюбила сахар
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+14. Aurora привита
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+15. Привитые единороги
+[
+  {
+    name: 'Aurora',
+    birthday: ISODate('1991-01-24T10:00:00.000Z'),
+    loves: [
+      'carrot',
+      'grape',
+      'sugar'
+    ],
+    weight: 450,
+    color: 'white',
+    vampires: 43,
+    vaccinated: true
+  }
+]
+16. Dunx разлюбил виноград
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+17. Вес Aurora увеличился вдвое
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+[
+  {
+    name: 'Aurora',
+    birthday: ISODate('1991-01-24T10:00:00.000Z'),
+    loves: [
+      'carrot',
+      'grape',
+      'sugar'
+    ],
+    weight: 900,
+    color: 'white',
+    vampires: 43,
+    vaccinated: true
+  },
+  {
+    name: 'Roodles',
+    birthday: ISODate('1979-08-18T15:44:00.000Z'),
+    loves: [
+      'apple'
+    ],
+    weight: 565,
+    color: 'black',
+    vampires: 99
+  },
+  {
+    name: 'Pilot',
+    birthday: ISODate('1997-03-01T02:03:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 650,
+    color: 'black',
+    vampires: 56
+  },
+  {
+    name: 'Dunx',
+    birthday: ISODate('1976-07-18T15:18:00.000Z'),
+    loves: [
+      'watermelon'
+    ],
+    weight: 704,
+    color: 'black',
+    vampires: 165
+  }
+]
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+[
+  {
+    name: 'Horny',
+    birthday: ISODate('1992-03-13T04:47:00.000Z'),
+    loves: [
+      'carrot',
+      'papaya'
+    ],
+    weight: 600,
+    color: 'black',
+    vampires: 63
+  },
+  {
+    name: 'Unicrom',
+    birthday: ISODate('1973-02-09T19:10:00.000Z'),
+    loves: [
+      'energon',
+      'redbull'
+    ],
+    weight: 984,
+    color: 'black',
+    vampires: 182
+  },
+  {
+    name: 'Roodles',
+    birthday: ISODate('1979-08-18T15:44:00.000Z'),
+    loves: [
+      'apple'
+    ],
+    weight: 555,
+    color: 'black',
+    vampires: 99
+  },
+  {
+    name: 'Kenny',
+    birthday: ISODate('1997-07-01T06:42:00.000Z'),
+    loves: [
+      'grape',
+      'lemon'
+    ],
+    weight: 603,
+    color: 'black',
+    vampires: 39
+  },
+  {
+    name: 'Pilot',
+    birthday: ISODate('1997-03-01T02:03:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 650,
+    color: 'black',
+    vampires: 56
+  },
+  {
+    name: 'Dunx',
+    birthday: ISODate('1976-07-18T15:18:00.000Z'),
+    loves: [
+      'watermelon'
+    ],
+    weight: 704,
+    color: 'black',
+    vampires: 165
+  }
+]
+[
+  {
+    name: 'Unicrom',
+    birthday: ISODate('1973-02-09T19:10:00.000Z'),
+    loves: [
+      'energon',
+      'redbull'
+    ],
+    weight: 984,
+    color: 'black',
+    vampires: 182
+  },
+  {
+    name: 'Dunx',
+    birthday: ISODate('1976-07-18T15:18:00.000Z'),
+    loves: [
+      'watermelon'
+    ],
+    weight: 704,
+    color: 'black',
+    vampires: 165
+  },
+  {
+    name: 'Roodles',
+    birthday: ISODate('1979-08-18T15:44:00.000Z'),
+    loves: [
+      'apple'
+    ],
+    weight: 555,
+    color: 'black',
+    vampires: 99
+  },
+  {
+    name: 'Solnara',
+    birthday: ISODate('1985-07-03T22:01:00.000Z'),
+    loves: [
+      'apple',
+      'carrot',
+      'chocolate'
+    ],
+    weight: 550,
+    color: 'white',
+    vampires: 80
+  },
+  {
+    name: 'Horny',
+    birthday: ISODate('1992-03-13T04:47:00.000Z'),
+    loves: [
+      'carrot',
+      'papaya'
+    ],
+    weight: 600,
+    color: 'black',
+    vampires: 63
+  },
+  {
+    name: 'Pilot',
+    birthday: ISODate('1997-03-01T02:03:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 650,
+    color: 'black',
+    vampires: 56
+  },
+  {
+    name: 'Aurora',
+    birthday: ISODate('1991-01-24T10:00:00.000Z'),
+    loves: [
+      'carrot',
+      'grape',
+      'sugar'
+    ],
+    weight: 900,
+    color: 'white',
+    vampires: 43,
+    vaccinated: true
+  },
+  {
+    name: 'Ayna',
+    birthday: ISODate('1998-03-07T05:30:00.000Z'),
+    loves: [
+      'strawberry',
+      'lemon'
+    ],
+    weight: 733,
+    color: 'white',
+    vampires: 40
+  },
+  {
+    name: 'Kenny',
+    birthday: ISODate('1997-07-01T06:42:00.000Z'),
+    loves: [
+      'grape',
+      'lemon'
+    ],
+    weight: 603,
+    color: 'black',
+    vampires: 39
+  },
+  {
+    name: 'Leia',
+    birthday: ISODate('2001-10-08T10:53:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 601,
+    color: 'white',
+    vampires: 33
+  },
+  {
+    name: 'Raleigh',
+    birthday: ISODate('2005-05-02T20:57:00.000Z'),
+    loves: [
+      'apple',
+      'sugar'
+    ],
+    weight: 421,
+    color: 'black',
+    vampires: 2
+  },
+  {
+    name: 'Nimue',
+    birthday: ISODate('1999-12-20T13:15:00.000Z'),
+    loves: [
+      'grape',
+      'carrot'
+    ],
+    weight: 540,
+    color: 'white'
+  }
+]
+[
+  {
+    name: 'Pilot',
+    birthday: ISODate('1997-03-01T02:03:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 650,
+    color: 'black',
+    vampires: 56
+  }
+]
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+[]
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+[
+  {
+    name: 'Aurora',
+    birthday: ISODate('1991-01-24T10:00:00.000Z'),
+    loves: [
+      'carrot',
+      'grape',
+      'sugar'
+    ],
+    weight: 900,
+    color: 'white',
+    vampires: 43,
+    vaccinated: true
+  },
+  {
+    name: 'Solnara',
+    birthday: ISODate('1985-07-03T22:01:00.000Z'),
+    loves: [
+      'apple',
+      'carrot',
+      'chocolate'
+    ],
+    weight: 550,
+    color: 'white',
+    vampires: 80
+  },
+  {
+    name: 'Ayna',
+    birthday: ISODate('1998-03-07T05:30:00.000Z'),
+    loves: [
+      'strawberry',
+      'lemon'
+    ],
+    weight: 733,
+    color: 'white',
+    vampires: 40
+  },
+  {
+    name: 'Leia',
+    birthday: ISODate('2001-10-08T10:53:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 601,
+    color: 'white',
+    vampires: 33
+  },
+  {
+    name: 'Nimue',
+    birthday: ISODate('1999-12-20T13:15:00.000Z'),
+    loves: [
+      'grape',
+      'carrot'
+    ],
+    weight: 540,
+    color: 'white'
+  }
+]
+[
+  {
+    name: 'Horny',
+    birthday: ISODate('1992-03-13T04:47:00.000Z'),
+    loves: [
+      'carrot',
+      'papaya'
+    ],
+    weight: 600,
+    color: 'black',
+    vampires: 63
+  },
+  {
+    name: 'Unicrom',
+    birthday: ISODate('1973-02-09T19:10:00.000Z'),
+    loves: [
+      'energon',
+      'redbull'
+    ],
+    weight: 984,
+    color: 'black',
+    vampires: 182
+  },
+  {
+    name: 'Roodles',
+    birthday: ISODate('1979-08-18T15:44:00.000Z'),
+    loves: [
+      'apple'
+    ],
+    weight: 545,
+    color: 'black',
+    vampires: 99
+  },
+  {
+    name: 'Solnara',
+    birthday: ISODate('1985-07-03T22:01:00.000Z'),
+    loves: [
+      'apple',
+      'carrot',
+      'chocolate'
+    ],
+    weight: 550,
+    color: 'white',
+    vampires: 80
+  },
+  {
+    name: 'Raleigh',
+    birthday: ISODate('2005-05-02T20:57:00.000Z'),
+    loves: [
+      'apple',
+      'sugar'
+    ],
+    weight: 421,
+    color: 'black',
+    vampires: 2
+  },
+  {
+    name: 'Leia',
+    birthday: ISODate('2001-10-08T10:53:00.000Z'),
+    loves: [
+      'apple',
+      'watermelon'
+    ],
+    weight: 601,
+    color: 'white',
+    vampires: 33
+  },
+  {
+    name: 'Dunx',
+    birthday: ISODate('1976-07-18T15:18:00.000Z'),
+    loves: [
+      'watermelon'
+    ],
+    weight: 704,
+    color: 'black',
+    vampires: 165
+  }
+]
