@@ -1,0 +1,15 @@
+<% layout('./layout/page.ejs') %>
+<main class="section game-detail">
+  <a class="detail-back" href="/#games">← Все игры</a>
+  <div class="detail-grid">
+    <img class="detail-picture" src="<%= picture %>" alt="Обложка <%= game.name %>" width="460" height="215">
+    <article>
+      <p class="eyebrow"><%= game.tag %> / <%= game.year %></p>
+      <h1><%= title %></h1>
+      <h2><%= game.title %></h2>
+      <p><%= desc %></p>
+      <p><%= game.detail %></p>
+      <ul class="detail-facts"><% game.facts.forEach(function(fact) { %><li><%= fact %></li><% }); %></ul>
+    </article>
+  </div>
+</main>

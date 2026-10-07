@@ -1,7 +1,7 @@
 {
   "name": "games-cdpr-2026",
   "version": "1.0.0",
-  "description": "ELECTRIC XTRA: учебный Express/EJS проект на основе сайта AIP_lectures, разделы 3–4",
+  "description": "Миры CD PROJEKT RED: Express/EJS на основе AIP_lectures, ветка task; разделы 3–4",
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",

@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 app.engine('ejs', require('ejs-locals'));
+app.locals.isHome = false;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
@@ -23,6 +24,6 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
-  res.render('error', { title: 'ELECTRIC XTRA — Ошибка', status: err.status || 500 });
+  res.render('error', { title: 'CD PROJEKT RED — Ошибка', status: err.status || 500 });
 });
 module.exports = app;
