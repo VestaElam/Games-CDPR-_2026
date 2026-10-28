@@ -12,3 +12,23 @@
 .navbar .nav-links{display:flex;align-items:center}
 @media(max-width:800px){.navbar .nav-links{display:flex}}
 
+
+/* Финальные визуальные исправления для desktop, tablet и mobile. */
+body{background:#090b10!important;color:#f7f7fa!important}
+body main,body .section,body .game-detail{color:#f7f7fa}
+.cta-primary span,.nav-explore span,.card-action span,.gallery-item i,.game-page-link{font-variant-emoji:text;font-family:Arial,sans-serif}
+img{image-rendering:auto}
+.card-image img,.gallery-item img,.world-card>img{background:#10131b}
+.game-detail{min-height:calc(100svh - 180px)}
+@media(max-width:800px){.nav-container{width:100%;padding-inline:0}.nav-links{max-width:100vw;overflow:auto}.game-detail{padding-top:110px}.detail-grid{grid-template-columns:minmax(0,1fr)}.detail-picture{width:100%;height:auto}.dialog-copy{overflow-wrap:anywhere}.dialog-copy h2{font-size:clamp(22px,7vw,30px)}}
+@media(max-width:520px){.hero-actions{width:100%}.cta-primary{max-width:100%;overflow:hidden}.card-body{min-width:0}.card-body h3,.card-body p{overflow-wrap:anywhere}.dialog-copy{padding:20px 18px}.dialog-copy p{font-size:13px}.dialog-copy ul{padding-left:0}.dialog-close{top:8px;right:8px;width:35px;height:35px}}
+
+/* Visual QA fixes: CDPR theme wins over Bootstrap and content stays readable at every viewport. */
+body{background:#090b10!important;color:#f7f7fa!important}
+body main,body .section,body .game-detail{color:#f7f7fa!important}
+body .section-head>p,body .card-body p,body .studio-text>p:not(.eyebrow),body .faq p{color:#aeb8ca}
+.cta-primary span,.nav-explore span,.card-action span,.gallery-item i,.game-page-link{font-family:Arial,sans-serif;font-variant-emoji:text}
+.game-detail{min-height:calc(100svh - 180px)}
+.card-image img,.gallery-item img,.world-card>img{image-rendering:auto;background:#10131b}
+@media(max-width:800px){.nav-container{width:100%;padding-inline:0}.game-detail{padding-top:110px}.detail-grid{grid-template-columns:minmax(0,1fr)}.detail-picture{width:100%;height:auto}.dialog-copy{overflow-wrap:anywhere}}
+@media(max-width:520px){.hero-actions{width:100%}.cta-primary{max-width:100%;overflow:hidden}.card-body{min-width:0}.card-body h3,.card-body p{overflow-wrap:anywhere}.dialog-copy{padding:20px 18px}.dialog-copy p{font-size:13px}.dialog-copy ul{padding-left:0}.dialog-close{top:8px;right:8px;width:35px;height:35px}}
