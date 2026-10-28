@@ -32,3 +32,6 @@ body .section-head>p,body .card-body p,body .studio-text>p:not(.eyebrow),body .f
 .card-image img,.gallery-item img,.world-card>img{image-rendering:auto;background:#10131b}
 @media(max-width:800px){.nav-container{width:100%;padding-inline:0}.game-detail{padding-top:110px}.detail-grid{grid-template-columns:minmax(0,1fr)}.detail-picture{width:100%;height:auto}.dialog-copy{overflow-wrap:anywhere}}
 @media(max-width:520px){.hero-actions{width:100%}.cta-primary{max-width:100%;overflow:hidden}.card-body{min-width:0}.card-body h3,.card-body p{overflow-wrap:anywhere}.dialog-copy{padding:20px 18px}.dialog-copy p{font-size:13px}.dialog-copy ul{padding-left:0}.dialog-close{top:8px;right:8px;width:35px;height:35px}}
+
+/* Disable the legacy floating-particle layer: its fixed children had no stable start position and could stick to the viewport top. */
+#particles,.particle{display:none!important}
