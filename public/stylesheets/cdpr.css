@@ -3,3 +3,7 @@
 @media(max-width:520px){.nav-links{top:70px;height:calc(100svh - 70px)}}
 
 .game-detail,.error-page{min-height:70vh;padding-top:140px}.detail-back{display:inline-block;margin-bottom:28px;color:var(--muted);font-size:13px;text-decoration:none}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.detail-picture{width:100%;aspect-ratio:460/215;object-fit:cover;border:1px solid var(--line)}.game-detail h1{font-size:clamp(28px,3vw,44px);line-height:1.2;margin:12px 0 24px;letter-spacing:-1px}.game-detail h2{font-size:20px;margin:24px 0 16px}.game-detail p:not(.eyebrow){color:#aeb8ca;font-size:14px;margin-bottom:18px}.detail-facts{padding-left:20px;color:#aeb8ca;font-size:13px}.detail-facts li{margin:8px 0}.game-page-link{display:inline-block;margin-top:24px;font-size:13px;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:6px}.game-page-link[hidden]{display:none}.error-page h1{font-size:38px}.error-page pre{white-space:pre-wrap;overflow-wrap:anywhere;margin-top:25px;font-size:12px}@media(max-width:800px){.detail-grid{grid-template-columns:1fr;gap:28px}.game-detail,.error-page{padding-top:120px}}
+
+/* Bootstrap is loaded in the shared CDPR layout; this keeps its controls inside the dark theme. */
+.bootstrap-cdpr-note{display:inline-flex;align-items:center;gap:8px;color:#aeb8ca;font-size:11px}
+
