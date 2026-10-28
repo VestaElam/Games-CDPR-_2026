@@ -7,3 +7,8 @@
 /* Bootstrap is loaded in the shared CDPR layout; this keeps its controls inside the dark theme. */
 .bootstrap-cdpr-note{display:inline-flex;align-items:center;gap:8px;color:#aeb8ca;font-size:11px}
 
+
+/* 5.2 CDPR navigation uses Bootstrap's responsive navbar classes. */
+.navbar .nav-links{display:flex;align-items:center}
+@media(max-width:800px){.navbar .nav-links{display:flex}}
+
