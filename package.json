@@ -5,9 +5,12 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "node --watch ./bin/www"
+    "dev": "node --watch ./bin/www",
+    "seed": "node seedCDPRGames.js",
+    "test": "node --test --test-concurrency=1 test/*.test.js"
   },
   "dependencies": {
+    "bootstrap": "5.3.3",
     "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "ejs-locals": "^1.0.2",

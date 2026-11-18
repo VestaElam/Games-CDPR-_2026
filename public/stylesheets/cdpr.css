@@ -35,3 +35,13 @@ body .section-head>p,body .card-body p,body .studio-text>p:not(.eyebrow),body .f
 
 /* Disable the legacy floating-particle layer: its fixed children had no stable start position and could stick to the viewport top. */
 #particles,.particle{display:none!important}
+
+/* Навигация со всеми шестью играми, единый порог для Bootstrap и CDPR. */
+.navbar .nav-links{flex-direction:row;margin:0;padding-left:0;gap:22px}
+.game-menu{position:relative;list-style:none}.game-menu summary{cursor:pointer;font-size:13px;color:#b8bbc4;list-style:none;padding:6px 0}.game-menu summary::after{content:'⌄';margin-left:7px}
+.game-submenu{position:absolute;top:100%;left:0;width:min(360px,85vw);padding:12px 18px!important;list-style:none;background:#10141e;border:1px solid #ffffff26;box-shadow:0 12px 28px #0008;z-index:10}
+.game-submenu a{display:block;white-space:normal;line-height:1.5;padding:9px 0}.nav-container{flex-wrap:nowrap!important}
+@media(min-width:1001px){.navbar .nav-links{position:static;width:auto;height:auto;visibility:visible}.navbar .menu-toggle{display:none}}
+@media(max-width:1000px){.navbar .menu-toggle{display:flex}.navbar .nav-explore{display:none}.navbar .nav-links{position:fixed;left:-100%;top:86px;width:100%;height:calc(100svh - 86px);visibility:hidden;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:24px 6%;overflow:auto;background:#0d111bf5;gap:12px}.navbar .nav-links.active{left:0;visibility:visible}.game-submenu{position:static;width:100%;box-shadow:none}.game-menu summary{padding:12px}.navbar .nav-links a{display:block;padding:12px}}
+@media(max-width:520px){.navbar .nav-links{top:70px;height:calc(100svh - 70px)}}
+

@@ -9,6 +9,10 @@ const data = games.map(function(game) {
     cover: '/images/' + game.id + '.jpg',
     desc: game.text,
     year: Number(game.year),
+    tag: game.tag,
+    subtitle: game.title,
+    detail: game.detail,
+    facts: game.facts,
     tags: game.facts
   };
 });
