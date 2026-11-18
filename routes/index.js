@@ -13,4 +13,13 @@ router.get('/', async (req,res,next) => {
   } catch(error) { next(error); }
 });
 router.get('/logreg', (req,res) => res.render('logreg', {title:'Вход в миры CD PROJEKT RED', username:'', error:null, notice:null}));
+router.post('/logreg', (req,res) => {
+  const username = typeof req.body.username === 'string' ? req.body.username.trim() : '';
+  const password = req.body.password;
+  if (!username || typeof password !== 'string' || password.length < 8 || password.length > 128) {
+    return res.status(400).render('logreg', {title:'Вход в CD PROJEKT RED', username, error:null, notice:'Проверь имя игрока и длину пароля.'});
+  }
+  // Проверка получения формы. Сам пароль не отображается и не записывается в журнал.
+  res.render('logreg', {title:'Вход в CD PROJEKT RED', username, error:null, notice:'Данные игрока '+username+' получены сервером.'});
+});
 module.exports = router;

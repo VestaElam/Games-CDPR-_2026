@@ -6,7 +6,7 @@
     <h1>Твоя история начинается здесь.</h1>
     <p class="auth-intro">Вход и регистрация</p>
     <p>Введи имя игрока и пароль. Если такого имени ещё нет, мы создадим профиль. Если профиль уже существует — войдём в него.</p>
-    <form class="row g-3" id="playerForm">
+    <form class="row g-3" id="playerForm" action="/logreg" method="post">
       <div class="col-12">
         <label class="form-label" for="playerName">Имя игрока</label>
         <input class="form-control" id="playerName" name="username" type="text" value="<%= username %>" placeholder="Например, БелыйВолк" autocomplete="username" required minlength="2" maxlength="40" aria-describedby="nameHelp">
@@ -17,7 +17,8 @@
         <input class="form-control" id="playerPassword" name="password" type="password" autocomplete="current-password" placeholder="Минимум 8 символов" required minlength="8" maxlength="128" aria-describedby="passwordHelp">
         <div class="form-text" id="passwordHelp">От 8 до 128 символов. Для существующего профиля введи свой пароль.</div>
       </div>
-      <div class="col-12"><button class="btn btn-primary auth-submit" type="button">Войти или создать профиль</button></div>
+      <div class="col-12"><button class="btn btn-primary auth-submit" type="submit">Войти или создать профиль</button></div>
+      <% if (notice) { %><div class="col-12"><p class="alert alert-success" role="status"><%= notice %></p></div><% } %>
     </form>
   </div>
 </main>
