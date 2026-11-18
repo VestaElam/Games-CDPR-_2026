@@ -1,0 +1,21 @@
+{
+  "stage": "10_7",
+  "checks": [
+    "home 200",
+    "all six game routes",
+    "live MongoDB query and missing game 404",
+    "clean routes and database catalog",
+    "session cookie 60 seconds",
+    "CDPR greeting cookie",
+    "MongoDB session persistence",
+    "counter increments; static assets excluded",
+    "global database navigation",
+    "login form",
+    "player model hash, salt, password check",
+    "conditional authentication error",
+    "registration, existing player login, wrong password",
+    "global player and greeting",
+    "POST logout destroys session"
+  ],
+  "passed": 15
+}

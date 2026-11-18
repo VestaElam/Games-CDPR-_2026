@@ -1,0 +1,14 @@
+{
+  "stage": "9_4",
+  "checks": [
+    "home 200",
+    "all six game routes",
+    "live MongoDB query and missing game 404",
+    "clean routes and database catalog",
+    "session cookie 60 seconds",
+    "CDPR greeting cookie",
+    "MongoDB session persistence",
+    "counter increments; static assets excluded"
+  ],
+  "passed": 8
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "stage": "5_1",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  },
+  {
+    "stage": "5_2",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  },
+  {
+    "stage": "6_1",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  },
+  {
+    "stage": "6_2",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  },
+  {
+    "stage": "6_3",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  },
+  {
+    "stage": "7_1",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  },
+  {
+    "stage": "7_2",
+    "checks": "HTTP all six games, Bootstrap, navigation; isolated MongoDB writes where applicable"
+  }
+]

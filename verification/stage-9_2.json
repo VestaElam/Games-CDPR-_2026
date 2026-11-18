@@ -1,0 +1,12 @@
+{
+  "stage": "9_2",
+  "checks": [
+    "home 200",
+    "all six game routes",
+    "live MongoDB query and missing game 404",
+    "clean routes and database catalog",
+    "session cookie 60 seconds",
+    "CDPR greeting cookie"
+  ],
+  "passed": 6
+}

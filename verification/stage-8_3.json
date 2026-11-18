@@ -1,0 +1,10 @@
+{
+  "stage": "8_3",
+  "checks": [
+    "home 200",
+    "all six game routes",
+    "router base",
+    "live MongoDB query and missing game 404"
+  ],
+  "passed": 4
+}

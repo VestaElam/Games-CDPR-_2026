@@ -1,0 +1,9 @@
+{
+  "stage": "8_2",
+  "checks": [
+    "home 200",
+    "all six game routes",
+    "router base"
+  ],
+  "passed": 3
+}
