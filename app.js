@@ -20,11 +20,11 @@ app.locals.user = null;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({limit:'16kb'}));
+app.use(express.urlencoded({ extended: false, limit:'16kb' }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.locals.sessionStore = MongoStore.create({mongoUrl, collectionName:'cdpr_sessions'});
+app.locals.sessionStore = MongoStore.create({mongoUrl, collectionName:'cdpr_sessions', mongoOptions:{serverSelectionTimeoutMS:5000}});
 app.locals.sessionStore.on('error', error => console.error('Хранилище сессий MongoDB:', error.message));
 app.use(session({
   secret: process.env.SESSION_SECRET || 'CDPR-worlds-local-learning-session-secret-2026',

@@ -4,12 +4,19 @@ var http = require('http');
 var port = parseInt(process.env.PORT || '3000', 10);
 app.set('port', port);
 var server = http.createServer(app);
-app.locals.ready.then(() => server.listen(port)).catch(error => {
+app.locals.ready.then(() => server.listen(port, process.env.HOST || '127.0.0.1')).catch(async error => {
   console.error('Не удалось подключиться к MongoDB:', error.message);
   process.exitCode = 1;
-  require('mongoose').disconnect();
+  await app.locals.sessionStore.close().catch(() => {});
+  await require('mongoose').disconnect();
 });
-function shutdown() { server.close(() => require('mongoose').disconnect().then(() => process.exit(0))); }
+function shutdown() {
+  server.close(async () => {
+    await app.locals.sessionStore.close();
+    await require('mongoose').disconnect();
+    process.exit(0);
+  });
+}
 process.once('SIGINT', shutdown);
 process.once('SIGTERM', shutdown);
 server.on('error', onError);

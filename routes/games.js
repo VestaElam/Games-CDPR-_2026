@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const createError = require('http-errors');
+const checkAuth = require('../middlewares/checkAuth');
 const { CDPRGame } = require('../models/cdprGame');
-router.get('/:gameId', async (req,res,next) => {
+router.get('/:gameId', checkAuth, async (req,res,next) => {
   try {
     const record = await CDPRGame.findOne({gameId:req.params.gameId}).lean();
     if (!record) return next(createError(404, 'Игра не найдена в каталоге CD PROJEKT RED'));
