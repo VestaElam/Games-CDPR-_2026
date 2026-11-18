@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { CDPRPlayer } = require('../models/cdprPlayer');
 const { CDPRGame } = require('../models/cdprGame');
 router.get('/', async (req,res,next) => {
   try {
@@ -13,13 +14,29 @@ router.get('/', async (req,res,next) => {
   } catch(error) { next(error); }
 });
 router.get('/logreg', (req,res) => res.render('logreg', {title:'Вход в миры CD PROJEKT RED', username:'', error:null, notice:null}));
-router.post('/logreg', (req,res) => {
+router.post('/logreg', async (req,res,next) => {
   const username = typeof req.body.username === 'string' ? req.body.username.trim() : '';
   const password = req.body.password;
-  if (!username || typeof password !== 'string' || password.length < 8 || password.length > 128) {
-    return res.status(400).render('logreg', {title:'Вход в CD PROJEKT RED', username, error:null, notice:'Проверь имя игрока и длину пароля.'});
+  const form = (status,error) => res.status(status).render('logreg', {title:'Вход в CD PROJEKT RED',username,error,notice:null});
+  if (!/^[\p{L}\p{N}_. -]{2,40}$/u.test(username) || typeof password !== 'string' || password.length < 8 || password.length > 128) {
+    return form(400,null);
   }
-  // Проверка получения формы. Сам пароль не отображается и не записывается в журнал.
-  res.render('logreg', {title:'Вход в CD PROJEKT RED', username, error:null, notice:'Данные игрока '+username+' получены сервером.'});
+  try {
+    await CDPRPlayer.init();
+    let player = await CDPRPlayer.findOne({username}).select('+hashedPassword +salt');
+    if (!player) {
+      try { player = await CDPRPlayer.create({username,password}); }
+      catch(error) {
+        if(error.code !== 11000) throw error;
+        player = await CDPRPlayer.findOne({username}).select('+hashedPassword +salt');
+        if (!player || !player.checkPassword(password)) return form(401,null);
+      }
+    } else if (!player.checkPassword(password)) return form(401,null);
+    // Новый SID после входа исключает сохранение анонимного идентификатора сессии.
+    await new Promise((resolve,reject)=>req.session.regenerate(error=>error?reject(error):resolve()));
+    req.session.user_id = player._id.toString();
+    await new Promise((resolve,reject)=>req.session.save(error=>error?reject(error):resolve()));
+    res.redirect('/');
+  } catch(error) {next(error);}
 });
 module.exports = router;
