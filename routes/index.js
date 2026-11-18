@@ -12,4 +12,5 @@ router.get('/', async (req,res,next) => {
     res.render('index', {title:'Миры CD PROJEKT RED | Игры и истории', isHome:true, catalog:games, gamesJSON});
   } catch(error) { next(error); }
 });
+router.get('/logreg', (req,res) => res.render('logreg', {title:'Вход в миры CD PROJEKT RED', username:'', error:null, notice:null}));
 module.exports = router;

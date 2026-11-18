@@ -1,0 +1,23 @@
+<% layout('./layout/page.ejs') %>
+<main class="section auth-page">
+  <a class="detail-back" href="/">← На главную</a>
+  <div class="auth-panel container">
+    <p class="eyebrow">CD PROJEKT RED / ПРОФИЛЬ ИГРОКА</p>
+    <h1>Твоя история начинается здесь.</h1>
+    <p class="auth-intro">Вход и регистрация</p>
+    <p>Введи имя игрока и пароль. Если такого имени ещё нет, мы создадим профиль. Если профиль уже существует — войдём в него.</p>
+    <form class="row g-3" id="playerForm">
+      <div class="col-12">
+        <label class="form-label" for="playerName">Имя игрока</label>
+        <input class="form-control" id="playerName" name="username" type="text" value="<%= username %>" placeholder="Например, БелыйВолк" autocomplete="username" required minlength="2" maxlength="40" aria-describedby="nameHelp">
+        <div class="form-text" id="nameHelp">От 2 до 40 символов: буквы, цифры, пробел, точка, дефис и подчёркивание.</div>
+      </div>
+      <div class="col-12">
+        <label class="form-label" for="playerPassword">Пароль</label>
+        <input class="form-control" id="playerPassword" name="password" type="password" autocomplete="current-password" placeholder="Минимум 8 символов" required minlength="8" maxlength="128" aria-describedby="passwordHelp">
+        <div class="form-text" id="passwordHelp">От 8 до 128 символов. Для существующего профиля введи свой пароль.</div>
+      </div>
+      <div class="col-12"><button class="btn btn-primary auth-submit" type="button">Войти или создать профиль</button></div>
+    </form>
+  </div>
+</main>
