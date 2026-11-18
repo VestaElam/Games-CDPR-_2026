@@ -1,19 +1,9 @@
-var express = require('express');
-var router = express.Router();
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Миры CD PROJEKT RED | Игры и истории', isHome: true });
+const router = require('express').Router();
+const games = require('../public/javascripts/games');
+router.get('/', (req,res) => res.render('index', {title:'Миры CD PROJEKT RED | Игры и истории',isHome:true}));
+games.forEach(game => {
+ router.get('/'+game.id, (req,res) => {
+  res.send('<h1>'+game.name+'</h1>');
+ });
 });
-
-router.get('/cyberpunk', function(req, res) {
-  res.send('<h1>Cyberpunk 2077</h1>');
-});
-
-router.get('/witcher3', function(req, res) {
-  res.send('<h1>Ведьмак 3: Дикая Охота</h1>');
-});
-
-router.get('/gwent', function(req, res) {
-  res.send('<h1>ГВИНТ: Ведьмак. Карточная игра</h1>');
-});
-
 module.exports = router;
