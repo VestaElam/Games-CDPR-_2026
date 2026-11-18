@@ -39,4 +39,12 @@ router.post('/logreg', async (req,res,next) => {
     res.redirect('/');
   } catch(error) {next(error);}
 });
+router.post('/logout', (req,res,next) => {
+  req.session.destroy(error => {
+    if(error) return next(error);
+    res.clearCookie('connect.sid', {path:'/',httpOnly:true,sameSite:'lax'});
+    res.locals.user = null;
+    res.redirect('/');
+  });
+});
 module.exports = router;
