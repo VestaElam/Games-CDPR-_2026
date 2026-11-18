@@ -19,6 +19,7 @@
       </div>
       <div class="col-12"><button class="btn btn-primary auth-submit" type="submit">Войти или создать профиль</button></div>
       <% if (notice) { %><div class="col-12"><p class="alert alert-success" role="status"><%= notice %></p></div><% } %>
+      <% if (error) { %><div class="col-12"><div class="alert alert-danger" role="alert"><%= error %></div></div><% } %>
     </form>
   </div>
 </main>

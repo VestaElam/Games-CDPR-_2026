@@ -19,7 +19,7 @@ router.post('/logreg', async (req,res,next) => {
   const password = req.body.password;
   const form = (status,error) => res.status(status).render('logreg', {title:'Вход в CD PROJEKT RED',username,error,notice:null});
   if (!/^[\p{L}\p{N}_. -]{2,40}$/u.test(username) || typeof password !== 'string' || password.length < 8 || password.length > 128) {
-    return form(400,null);
+    return form(400,'Проверь имя игрока и пароль: имя от 2 до 40 допустимых символов, пароль от 8 до 128 символов.');
   }
   try {
     await CDPRPlayer.init();
@@ -29,9 +29,9 @@ router.post('/logreg', async (req,res,next) => {
       catch(error) {
         if(error.code !== 11000) throw error;
         player = await CDPRPlayer.findOne({username}).select('+hashedPassword +salt');
-        if (!player || !player.checkPassword(password)) return form(401,null);
+        if (!player || !player.checkPassword(password)) return form(401,'Неверный пароль. Попробуй ещё раз.');
       }
-    } else if (!player.checkPassword(password)) return form(401,null);
+    } else if (!player.checkPassword(password)) return form(401,'Неверный пароль. Попробуй ещё раз.');
     // Новый SID после входа исключает сохранение анонимного идентификатора сессии.
     await new Promise((resolve,reject)=>req.session.regenerate(error=>error?reject(error):resolve()));
     req.session.user_id = player._id.toString();
