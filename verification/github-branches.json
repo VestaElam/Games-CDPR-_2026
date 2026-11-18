@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-18",
+  "branchCount": 29,
+  "expectedNames": true,
+  "forbiddenExampleNamesFound": false,
+  "branches": [
+    {
+      "sha": "26e88b8a7f898689a5f63d751258224c15868e0c",
+      "branch": "main"
+    },
+    {
+      "sha": "69373933f41eb54d8414667eb5f5a718f97928f9",
+      "branch": "4_2"
+    },
+    {
+      "sha": "b08585e7e62731fd74dbaaf7ea02ea54e8e405cc",
+      "branch": "4_3"
+    },
+    {
+      "sha": "ba8694ac1e9b00b5312e327066b59d763235c97b",
+      "branch": "4_4"
+    },
+    {
+      "sha": "586ac09399a71ed01c6efaf1513219d421834c68",
+      "branch": "5_1"
+    },
+    {
+      "sha": "5aecf88be210abfed260a3ed5fa4d7d4b55ec257",
+      "branch": "5_2"
+    },
+    {
+      "sha": "446eda515f2e713a35f8297e520a8e021d160dca",
+      "branch": "6_1"
+    },
+    {
+      "sha": "baf94260975d60b9663e7916d11783bf42533ad3",
+      "branch": "6_2"
+    },
+    {
+      "sha": "d4e8ce6beace4802acc77894dd3f387044aba26b",
+      "branch": "6_3"
+    },
+    {
+      "sha": "b44373df9c5aa935b7d56e1b0ec92dc19c083c2d",
+      "branch": "7_1"
+    },
+    {
+      "sha": "162722ce9788ad0f265075cead3f144d7cfcd77e",
+      "branch": "7_2"
+    },
+    {
+      "sha": "cad5b71d892748bb262b42cb0893e0054fc874ef",
+      "branch": "7_3"
+    },
+    {
+      "sha": "a05201450ebf512323be0cdc4b1bff099f44447d",
+      "branch": "8_1"
+    },
+    {
+      "sha": "987c60fce9fd9f7aa526a6fb06c90d04fd566b62",
+      "branch": "8_2"
+    },
+    {
+      "sha": "7351443ebbce0c3d918d860e67a81466f2ba2f38",
+      "branch": "8_3"
+    },
+    {
+      "sha": "3a9dedae5b203c62c806458b0e751203d3498209",
+      "branch": "8_4"
+    },
+    {
+      "sha": "5038b38d18129f389f29484574e76dd770291924",
+      "branch": "9_1"
+    },
+    {
+      "sha": "82b6b08ad26d80bad5036c8444a389e529f76ec1",
+      "branch": "9_2"
+    },
+    {
+      "sha": "8e4632e6dad369c1ef811b330c748cdd1e3c2f27",
+      "branch": "9_3"
+    },
+    {
+      "sha": "98629fe1d67a96452b31ebf53b16207cbfe718f6",
+      "branch": "9_4"
+    },
+    {
+      "sha": "45e0eb9b2ffb5f490ca1978aac1d53fc944b6c82",
+      "branch": "9_5"
+    },
+    {
+      "sha": "07503f8e723468ac24a023c85ce827a94cbad8a4",
+      "branch": "10_1"
+    },
+    {
+      "sha": "f82104dbd9cea414b865b3bda313314403d1c421",
+      "branch": "10_2"
+    },
+    {
+      "sha": "deb996d3444d5a50b45804ceb120331a4c2d135e",
+      "branch": "10_3"
+    },
+    {
+      "sha": "a613baf08c7c0769d1308eb558dfca1113bd94b4",
+      "branch": "10_4"
+    },
+    {
+      "sha": "57c0c42b96304cf65091733fcb187513e98efaf4",
+      "branch": "10_5"
+    },
+    {
+      "sha": "16c692679d4b1064d2360985938a1356f5eb1e91",
+      "branch": "10_6"
+    },
+    {
+      "sha": "db7cbbdf54f03d3e8325f9fd0027e1bbe548ab81",
+      "branch": "10_7"
+    },
+    {
+      "sha": "d93d14829edfb05a51b973b1c233bdecae2414a9",
+      "branch": "10_8"
+    }
+  ],
+  "section4": [
+    {
+      "stage": "main",
+      "result": "PASS: main, HTTP game pages, title, assets and 404"
+    },
+    {
+      "stage": "4_2",
+      "result": "PASS: main, HTTP game pages, title, assets and 404"
+    },
+    {
+      "stage": "4_3",
+      "result": "PASS: main, HTTP game pages, title, assets and 404"
+    },
+    {
+      "stage": "4_4",
+      "result": "PASS: main, HTTP game pages, title, assets and 404"
+    }
+  ]
+}

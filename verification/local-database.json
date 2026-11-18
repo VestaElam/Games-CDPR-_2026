@@ -1,0 +1,37 @@
+{
+  "database": "cdpr_worlds_2026",
+  "games": [
+    {
+      "gameId": "cyberpunk",
+      "title": "Cyberpunk 2077"
+    },
+    {
+      "gameId": "witcher3",
+      "title": "Ведьмак 3: Дикая Охота"
+    },
+    {
+      "gameId": "phantom",
+      "title": "Cyberpunk 2077: Призрачная свобода"
+    },
+    {
+      "gameId": "thronebreaker",
+      "title": "Кровная вражда: Ведьмак. Истории"
+    },
+    {
+      "gameId": "gwent",
+      "title": "ГВИНТ: Ведьмак. Карточная игра"
+    },
+    {
+      "gameId": "witcher2",
+      "title": "Ведьмак 2: Убийцы королей"
+    }
+  ],
+  "counts": {
+    "cdpr_games": 6
+  },
+  "learn": {
+    "unicorns": 12,
+    "unicorns_syntax": 12
+  },
+  "remainingTestDatabases": []
+}
