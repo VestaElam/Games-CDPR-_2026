@@ -45,3 +45,5 @@ body .section-head>p,body .card-body p,body .studio-text>p:not(.eyebrow),body .f
 @media(max-width:1000px){.navbar .menu-toggle{display:flex}.navbar .nav-explore{display:none}.navbar .nav-links{position:fixed;left:-100%;top:86px;width:100%;height:calc(100svh - 86px);visibility:hidden;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:24px 6%;overflow:auto;background:#0d111bf5;gap:12px}.navbar .nav-links.active{left:0;visibility:visible}.game-submenu{position:static;width:100%;box-shadow:none}.game-menu summary{padding:12px}.navbar .nav-links a{display:block;padding:12px}}
 @media(max-width:520px){.navbar .nav-links{top:70px;height:calc(100svh - 70px)}}
 
+
+.session-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 6%;background:#10141e;font-size:13px;border-bottom:1px solid #ffffff18}.session-strip span{color:#aeb8ca;font-size:11px}.session-strip strong{color:#ff526a}

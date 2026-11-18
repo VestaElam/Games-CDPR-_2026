@@ -31,6 +31,11 @@ app.use(session({
   resave:false, saveUninitialized:true,
   store:app.locals.sessionStore
 }));
+app.use(function(req,res,next) {
+  req.session.counter = (req.session.counter || 0) + 1;
+  res.locals.counter = req.session.counter;
+  next();
+});
 app.use('/games', require('./routes/games'));
 app.use('/', indexRouter);
 app.use(function(req, res, next) { next(createError(404)); });
