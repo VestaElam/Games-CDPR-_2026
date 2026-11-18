@@ -1,21 +1,11 @@
-const { MongoClient } = require('mongodb');
-
-const url = 'mongodb://127.0.0.1:27017';
-const client = new MongoClient(url);
-const dbName = 'cdpr_worlds_2026';
-
-async function main() {
-  await client.connect();
-  const db = client.db(dbName);
-  const collection = db.collection('cdpr_games_demo');
-  const result = await collection.insertMany([
-    { id: 'cyberpunk', name: 'Cyberpunk 2077', world: 'cyberpunk' },
-    { id: 'witcher3', name: 'Ведьмак 3: Дикая Охота', world: 'witcher' },
-    { id: 'gwent', name: 'ГВИНТ: Ведьмак. Карточная игра', world: 'witcher' }
-  ]);
-  console.log('Connected successfully to MongoDB');
-  console.log('Inserted CDPR demo documents:', result.insertedCount);
-  console.log('Database:', dbName, 'Collection:', collection.collectionName);
+const {MongoClient}=require('mongodb');
+const {mongoUrl}=require('./config/database');
+const games=require('./public/javascripts/games');
+const client=new MongoClient(mongoUrl);
+async function main(){
+ await client.connect();const collection=client.db().collection('cdpr_games_demo');
+ await collection.createIndex({gameId:1},{unique:true});
+ for(const game of games)await collection.updateOne({gameId:game.id},{$setOnInsert:{gameId:game.id,title:game.name,world:game.world}},{upsert:true});
+ console.log('MongoDB driver: сохранено игр',await collection.countDocuments());
 }
-
-main().catch(console.error).finally(() => client.close());
+main().catch(error=>{console.error(error.message);process.exitCode=1}).finally(()=>client.close());
