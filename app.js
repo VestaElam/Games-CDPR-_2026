@@ -10,6 +10,7 @@ mongoose.set('bufferCommands', false);
 var indexRouter = require('./routes/index');
 
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 var app = express();
 app.locals.ready = mongoose.connect(mongoUrl, {serverSelectionTimeoutMS:5000});
 app.engine('ejs', require('ejs-locals'));
@@ -22,10 +23,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.locals.sessionStore = MongoStore.create({mongoUrl, collectionName:'cdpr_sessions'});
+app.locals.sessionStore.on('error', error => console.error('Хранилище сессий MongoDB:', error.message));
 app.use(session({
   secret: process.env.SESSION_SECRET || 'CDPR-worlds-local-learning-session-secret-2026',
   cookie: {maxAge:60*1000, httpOnly:true, sameSite:'lax'},
-  resave:false, saveUninitialized:true
+  resave:false, saveUninitialized:true,
+  store:app.locals.sessionStore
 }));
 app.use('/games', require('./routes/games'));
 app.use('/', indexRouter);
