@@ -8,7 +8,6 @@ const { mongoUrl } = require('./config/database');
 mongoose.set('bufferCommands', false);
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 app.locals.ready = mongoose.connect(mongoUrl, {serverSelectionTimeoutMS:5000});
@@ -24,7 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/games', require('./routes/games'));
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use(function(req, res, next) { next(createError(404)); });
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;

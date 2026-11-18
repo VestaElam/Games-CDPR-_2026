@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const createError = require('http-errors');
 const { CDPRGame } = require('../models/cdprGame');
-router.get('/', (req,res) => res.send('Маршрутизатор каталога игр CD PROJEKT RED'));
 router.get('/:gameId', async (req,res,next) => {
   try {
     const record = await CDPRGame.findOne({gameId:req.params.gameId}).lean();

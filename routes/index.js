@@ -1,21 +1,13 @@
-var express = require('express');
-var games = require('../public/javascripts/games');
-var router = express.Router();
-
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Миры CD PROJEKT RED | Игры и истории', isHome: true });
+const router = require('express').Router();
+const { CDPRGame } = require('../models/cdprGame');
+router.get('/', async (req,res,next) => {
+  try {
+    const records = await CDPRGame.find().sort({created:1,_id:1}).lean();
+    const games = records.map(record => ({ id:record.gameId, name:record.title, title:record.subtitle,
+      world:record.world, cover:record.cover, tag:record.tag, year:record.year, text:record.desc,
+      detail:record.detail, facts:record.facts || [] }));
+    const gamesJSON = JSON.stringify(games).replace(/</g, '\u003c');
+    res.render('index', {title:'Миры CD PROJEKT RED | Игры и истории', isHome:true, catalog:games, gamesJSON});
+  } catch(error) { next(error); }
 });
-
-// Каждая игра из каталога получает страницу через общий шаблон game.ejs.
-games.forEach(function(game) {
-  router.get('/' + game.id, function(req, res) {
-    res.render('game', {
-      title: game.name,
-      picture: '/images/' + game.id + '.jpg',
-      desc: game.text,
-      game: game
-    });
-  });
-});
-
 module.exports = router;
