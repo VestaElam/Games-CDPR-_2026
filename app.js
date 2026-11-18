@@ -3,11 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+const { mongoUrl } = require('./config/database');
+mongoose.set('bufferCommands', false);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.locals.ready = mongoose.connect(mongoUrl, {serverSelectionTimeoutMS:5000});
 app.engine('ejs', require('ejs-locals'));
 app.locals.isHome = false;
 app.locals.gameMenu = require('./public/javascripts/games');
