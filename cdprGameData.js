@@ -7,10 +7,15 @@ const data = games.map(function(game) {
     title: game.name,
     world: game.world,
     cover: '/images/' + game.id + '.jpg',
-    description: game.text,
+    desc: game.text,
     year: Number(game.year),
+    tag: game.tag,
+    subtitle: game.title,
+    detail: game.detail,
+    facts: game.facts,
     tags: game.facts
   };
 });
 
 module.exports.data = data;
+

@@ -1,14 +1,11 @@
-const mongoose = require('mongoose');
-
-const mongoUrl = 'mongodb://127.0.0.1:27017/cdpr_worlds_2026';
-const connection = mongoose.connect(mongoUrl);
-const CDPRGame = mongoose.model('CDPRGame', { title: String });
-
-async function main() {
-  await connection;
-  const game = new CDPRGame({ title: 'Cyberpunk 2077' });
-  await game.save();
-  console.log('Mongoose CDPR model saved:', game.title);
+const mongoose=require('mongoose');
+// Отдельная демонстрационная база; каталог приложения не изменяется.
+const mongoUrl=process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/cdpr_mongoose_demo_2026';
+const CDPRDemoGame=mongoose.model('CDPRDemoGame',{title:String});
+async function main(){
+ await mongoose.connect(mongoUrl);
+ const game=new CDPRDemoGame({title:'Ведьмак 3: Дикая Охота'});
+ await game.save();
+ console.log('Сохранена игра: '+game.title);
 }
-
-main().catch(console.error).finally(() => mongoose.disconnect());
+main().catch(error=>{console.error(error.message);process.exitCode=1}).finally(()=>mongoose.disconnect());
