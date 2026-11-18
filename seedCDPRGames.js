@@ -1,21 +1,25 @@
 const { MongoClient } = require('mongodb');
+const { mongoUrl } = require('./config/database');
 const { data } = require('./cdprGameData');
 
-const url = 'mongodb://127.0.0.1:27017';
-const client = new MongoClient(url);
-const dbName = 'cdpr_worlds_2026';
-
-async function main() {
-  await client.connect();
-  const collection = client.db(dbName).collection('cdpr_games');
-  const existing = await collection.countDocuments();
-  if (existing === 0) {
-    const result = await collection.insertMany(data);
-    console.log('Seeded CDPR games:', result.insertedCount);
-  } else {
-    console.log('CDPR games already seeded:', existing);
+async function seedGames(db) {
+  const collection = db.collection('cdpr_games');
+  await collection.createIndex({ gameId: 1 }, { unique: true });
+  for (const source of data) {
+    await collection.updateOne({ gameId: source.gameId }, { $setOnInsert: { ...source, created: new Date() } }, { upsert: true });
+    // Дополняем старый посев только отсутствующими полями; правки пользователя сохраняются.
+    for (const [key, value] of Object.entries(source)) {
+      await collection.updateOne({ gameId: source.gameId, [key]: { $exists: false } }, { $set: { [key]: value } });
+    }
+    await collection.updateOne({ gameId: source.gameId, created: { $exists: false } }, { $set: { created: new Date() } });
   }
-  console.log('Catalog count:', await collection.countDocuments());
+  return collection.countDocuments();
 }
-
-main().catch(console.error).finally(() => client.close());
+if (require.main === module) {
+  const client = new MongoClient(mongoUrl);
+  client.connect().then(() => seedGames(client.db()))
+    .then(count => console.log('Каталог CDPR, документов:', count))
+    .catch(error => { console.error(error.message); process.exitCode = 1; })
+    .finally(() => client.close());
+}
+module.exports = { seedGames };
