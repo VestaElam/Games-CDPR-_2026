@@ -15,7 +15,7 @@ var app = express();
 app.locals.ready = mongoose.connect(mongoUrl, {serverSelectionTimeoutMS:5000});
 app.engine('ejs', require('ejs-locals'));
 app.locals.isHome = false;
-app.locals.gameMenu = require('./public/javascripts/games');
+app.locals.nav = [];
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
@@ -36,6 +36,7 @@ app.use(function(req,res,next) {
   res.locals.counter = req.session.counter;
   next();
 });
+app.use(require('./middlewares/createMenu'));
 app.use('/games', require('./routes/games'));
 app.use('/', indexRouter);
 app.use(function(req, res, next) { next(createError(404)); });
